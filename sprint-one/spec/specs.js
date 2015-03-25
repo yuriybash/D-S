@@ -30,7 +30,7 @@ define([
       }
     });
 
-    xdescribe('stack shared behavior', function(){
+    describe('stack shared behavior', function(){
 
       verifyClass(instantiator).followsPattern(variant, {}, prototypeOfInstances);
 
@@ -71,7 +71,7 @@ define([
 
     });
 
-    xdescribe('stack-specific behavior', function(){
+    describe('stack-specific behavior', function(){
       it('removes the most recently added of two items', function() {
         stack.push('a');
         stack.push('b');
@@ -102,7 +102,7 @@ define([
       }
     });
 
-    xdescribe('queue shared behavior', function(){
+    describe('queue shared behavior', function(){
 
       verifyClass(instantiator).followsPattern(variant, {}, prototypeOfInstances);
 

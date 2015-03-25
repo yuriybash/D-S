@@ -35,15 +35,15 @@ queueMethods.dequeue = function(){
     this.num--;
   }
 
-  if (this.queue < this.size) {
+  if (this.queue < this.num) {
     this.queue++;
   }
 
   else {
-    this.queue = this.size;
+    this.queue = this.num;
   };
 
-  delete this.storage[this.queue];
+  
   return temp;
 
 }
