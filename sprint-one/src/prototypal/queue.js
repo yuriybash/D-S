@@ -7,9 +7,6 @@ var Queue = function() {
   obj.storage = {};
   obj.order = 0;
 
-
-
-
   return obj;
 };
 
@@ -20,7 +17,6 @@ queueMethods.enqueue = function(value){
   this.storage[this.num + this.order] = value;
   console.log(this.storage)
   this.num++;
-
 
 };
 

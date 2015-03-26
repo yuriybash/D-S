@@ -5,9 +5,7 @@ var Stack = function() {
   obj.storage = {};
   obj.num = 0;
 
-  obj.size = stackMethods.size;
-  obj.push = stackMethods.push;
-  obj.pop = stackMethods.pop;
+  _.extend(obj, stackMethods);
 
   return obj;
 
@@ -22,7 +20,6 @@ stackMethods.push = function(value) {
 };
 
 stackMethods.pop = function() {
-    //debugger;
 
     var temp = this.storage[this.num - 1];
     delete this.storage[this.num - 1];

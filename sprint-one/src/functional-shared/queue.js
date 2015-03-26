@@ -7,14 +7,7 @@ var Queue = function(){
   obj.num = 0;
   obj.queue = 0;
 
-  obj.size = queueMethods.size;
-  obj.enqueue = queueMethods.enqueue;
-  obj.dequeue = queueMethods.dequeue;
-
-
-
-
-
+  _.extend(obj, queueMethods);
 
   return obj;
 
@@ -39,16 +32,11 @@ queueMethods.dequeue = function(){
     this.queue++;
   }
 
-
-
-  
   return temp;
 
 }
-
 
 queueMethods.size = function(){
 
   return this.num;
 }
-

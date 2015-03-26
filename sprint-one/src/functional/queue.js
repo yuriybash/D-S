@@ -22,7 +22,7 @@ var Queue = function(){
 
     if (queue < size){
       queue++
-    } 
+    }
 
     return value;
   };
@@ -33,5 +33,3 @@ var Queue = function(){
 
   return someInstance;
 };
-
-
