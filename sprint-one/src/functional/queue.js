@@ -22,9 +22,7 @@ var Queue = function(){
 
     if (queue < size){
       queue++
-    } else {
-      queue = size
-    };
+    } 
 
     return value;
   };

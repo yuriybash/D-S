@@ -39,9 +39,7 @@ queueMethods.dequeue = function(){
     this.queue++;
   }
 
-  else {
-    this.queue = this.num;
-  };
+
 
   
   return temp;
