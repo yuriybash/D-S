@@ -36,8 +36,8 @@ treeMethods.contains = function(target){
   }
 
 
+return bool;
 
-if (bool === true) return bool;
 
 };
 
