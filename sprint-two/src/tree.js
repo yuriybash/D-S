@@ -24,7 +24,7 @@ treeMethods.contains = function(target){
 
   var bool = false;
 
- debugger;
+ // debugger;
   if (this.value === target) {
     bool = true;
   };
