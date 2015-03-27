@@ -37,7 +37,6 @@ treeMethods.contains = function(target){
 
 
 
-console.log("target: " + target + "bool: " + bool);
 if (bool === true) return bool;
 
 };
