@@ -31,7 +31,7 @@ treeMethods.contains = function(target){
 
   if (this.children.length > 0) {
     for (var i = 0; i < this.children.length; i++) {
-      bool = this.children[i].contains(target);
+      if(this.children[i].contains(target)){bool = true};
     }
   }
 
