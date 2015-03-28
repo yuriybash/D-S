@@ -17,17 +17,17 @@ var BinarySearchTree = function(value){
         //if node to be inserted is less than comparison node, insert to left
         //else insert to right
 
-    console.log("inserted " + node)
+
 
 
     function insertNode(newNode, currentComparisonNode){
 
+      var createNode = BinarySearchTree(node);
+
+
       if(currentComparisonNode["left"] === null && currentComparisonNode["right"] === null){
 
-          var createNode = {};
-          createNode.value = newNode;
-          createNode.left = null;
-          createNode.right = null;
+
 
           if(newNode < currentComparisonNode.value){
               currentComparisonNode.left = createNode;
@@ -35,7 +35,7 @@ var BinarySearchTree = function(value){
             currentComparisonNode.right = createNode;
           }
 
-          return;
+
 
       }
        else if(newNode < currentComparisonNode.value){
@@ -43,7 +43,7 @@ var BinarySearchTree = function(value){
               if(currentComparisonNode.left !== null){
                 insertNode(newNode, currentComparisonNode.left)
               } else{
-                currentComparisonNode.left = newNode;
+                currentComparisonNode.left = createNode;
               }
 
        }
@@ -52,7 +52,7 @@ var BinarySearchTree = function(value){
           if(currentComparisonNode.right !== null){
                 insertNode(newNode, currentComparisonNode.right)
               } else{
-                currentComparisonNode.right = newNode;
+                currentComparisonNode.right = createNode;
               }
 
 
@@ -70,37 +70,6 @@ var BinarySearchTree = function(value){
 
     insertNode(node, obj);
 
-
-    console.log("BST is now: ")
-    console.log(obj);
-    console.log(" ")
-
-
-
-
-
-
-
-    // //if the tree has only one node, add the new node to the left or right
-    // if(obj["left"] === null && obj["right"] ===null){
-
-    //     var newNode = {};
-    //     newNode.value = node;
-    //     newNode.left = null;
-    //     newNode.right = null;
-
-    //     if(node < obj.value){
-    //       obj.left = newNode;
-    //     } else{
-    //       obj.right = newNode;
-    //     }
-
-    // }
-
-    //if the the tree has at least one child - whether to the left or to the right,
-    //we want to
-
-    console.log(obj);
     return;
 
 
@@ -112,12 +81,46 @@ var BinarySearchTree = function(value){
 
   obj.contains = function(target){
 
+    //1. check head node. if match, return true
+    //2. if target < head node, check against all nodes in left branch of head node
+    //3. if target > head node, check against all nodes in right branch of head node
+    //if no match found at end, return false;
+
+    var bool = false;
+
+    if(this.value === target || bool){
+      bool = true;
+    }
+    else if(target < this.value && this.left){
+        bool = this.left.contains(target);
+    } else if(this.right) {
+        bool = this.right.contains(target);
+    }
+
+
+    return bool;
+
+
+
   }
 
 
 
 
-  obj.depthFirstLog = function(){
+  obj.depthFirstLog = function(cb){
+
+    cb(this.value);
+
+    if(this.left){
+        this.left.depthFirstLog(cb);
+    }
+    if(this.right){
+        this.right.depthFirstLog(cb);
+    }
+
+
+
+
 
   }
 
