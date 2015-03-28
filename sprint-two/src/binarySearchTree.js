@@ -117,12 +117,75 @@ var BinarySearchTree = function(value){
     if(this.right){
         this.right.depthFirstLog(cb);
     }
+  };
+
+  obj.breadthFirstLog = function(cb){
+
+    var nodeArray = [];
+
+    nodeArray.push(this);
+    nodeArray.push(this.left);
+    nodeArray.push(this.right);
+
+
+
+
+    nodeArray = nodeArray.concat();
+
+
+
+    /*
+    // debugger;
+    var array = [];
+    var nodesToVisit = [this];
+    var currentNode = this;
+
+
+    while(nodesToVisit){
+
+        array.push(currentNode);
+        nodesToVisit.push(currentNode.left);
+        nodesToVisit.push(currentNode.right);
 
 
 
 
 
+    }
+
+
+
+
+// execute cb on root
+    array.push(this);
+// execute cb on left
+  if (this.left) {
+    array.push(this.left);
+    nodesToVisit.push(this.left);
+  };
+
+  if (this.right) {
+      array.push(this.right);
+      nodesToVisit.push(this.right)
   }
+
+
+
+
+// go down right and repeat
+    //this.right.breadthFirstLog(cb)
+
+
+
+debugger;
+
+  };
+
+*/
+};
+
+
+
 
 
 
